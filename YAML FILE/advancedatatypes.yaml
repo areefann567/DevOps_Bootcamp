@@ -1,0 +1,64 @@
+student: !!seq
+ -marks
+ -roll
+ -phno
+
+cities: [hyderabad,bangalore]
+
+#some of the keys of the  sequence s empty it know as sparse seq
+sparse seq:
+ - hey
+ - hey world
+ -              #it also null
+ - NULL          #it also null
+ - yaml
+
+#nested seq
+-
+ - apple
+ - mango
+ - bannna
+-
+ - hyderabad
+ - bangalore
+ - delhi
+
+#key: value pairs are called maps
+!!map
+
+#nested mapping: map within a map
+name: arif
+job:
+  role: student of kunal
+  main: bootcamp
+#same can be written as
+name: arif
+job: {role: student of kunal,main: bootcamp}
+
+#pairs: key may have duplicate values
+#!!pairs
+
+
+pair exaample: !!pairs
+ -job: student
+ -job: dev
+ #same can be written as
+ pair exaample: !!pairs [job: student,job: dev]
+#this will be arrays of hash table
+
+#!!set here it allows only unique values
+names: !!set
+ ? arif
+ ? sai
+ ? sharuk
+
+#dictionary !!omap
+public: !!omap
+  - arif:
+     - name: arif
+     - age: 22
+     - marks: 65
+  - sai:
+    - name: sai
+    - age: 22
+    - marks: 75
